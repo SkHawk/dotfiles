@@ -16,6 +16,9 @@ Plugin 'tmux-plugins/vim-tmux'
 " https://jeffkreeftmeijer.com/vim-number/
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
+" https://github.com/morhetz/gruvbox
+Plugin 'morhetz/gruvbox'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,3 +43,5 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
+colorscheme gruvbox
+set background=dark

@@ -32,12 +32,17 @@ fi
 
 ## Verify if Tmux is installed
 echo Verifying if tmux is installed...
-if [ type "tmux" 2>/dev/null ];then
-    sudo apt install tmux
-else
+##if [ type "tmux" 2>/dev/null ]; then
+if which tmux >/dev/null 2>&1; then
     echo tmux is installed!
+else
+    sudo apt install tmux
+fi
 
 echo Soft-linking files
 ln -sfv "$DOTFILES_DIR/.bashrc" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
+
+
+

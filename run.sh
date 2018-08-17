@@ -20,7 +20,12 @@ else
 fi
 
 ## Install vim color scheme
-cp "$DOTFILES_DIR/colors/*.vim" ~/.vim/colors
+if [ ! -d "~/.vim/colors"  ]; then
+    mkdir ~/.vim/colors
+    cp "$DOTFILES_DIR/colors" ~/.vim/colors
+else
+    cp "$DOTFILES_DIR/colors" ~/.vim/colors
+fi
 
 ## Verify if Vundle is installed
 echo Verifying if Vundle is installed...
@@ -32,8 +37,7 @@ fi
 
 ## Verify if Tmux is installed
 echo Verifying if tmux is installed...
-##if [ type "tmux" 2>/dev/null ]; then
-if which tmux >/dev/null 2>&1; then
+if which tmux >/dev/null 2>&1; then ##if [ type "tmux" 2>/dev/null ]; then
     echo tmux is installed!
 else
     sudo apt install tmux

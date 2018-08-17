@@ -10,13 +10,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" https://github.com/tmux-plugins/vim-tmux
+"" https://github.com/tmux-plugins/vim-tmux
 Plugin 'tmux-plugins/vim-tmux'
 
-" https://jeffkreeftmeijer.com/vim-number/
+"" https://jeffkreeftmeijer.com/vim-number/
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-" https://github.com/morhetz/gruvbox
+"" https://github.com/morhetz/gruvbox
 Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
@@ -49,5 +49,7 @@ set expandtab
 set shiftwidth=4
 set smarttab
 
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+set t_Co=256 "colorscheme on terminal
 set background=dark

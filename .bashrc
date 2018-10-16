@@ -117,4 +117,13 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PAT
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-PS1='\e[38;5;124m\u\e[38;5;208m@\e[38;5;202m\h \e[38;5;24m\w \n\e[38;5;130mλ \e[38;5;215m'
+#PS1='\e[38;5;124m\]\u\e[38;5;208m\]@\e[38;5;202m\]\h \e[38;5;24m\]\w \n\e[38;5;130m\]λ \e[38;5;215m'
+
+RED=$(tput setaf 124)
+YELLOW=$(tput setaf 208)
+ORANGE=$(tput setaf 202)
+BLUE=$(tput setaf 24)
+D_ORANGE=$(tput setaf 130)
+TEXT=$(tput setaf 215)
+
+PS1='\[$RED\]\u\[$YELLOW\]@\[$ORANGE\]\h \[$BLUE\]\w \n\[$D_ORANGE\]λ \[$(tput sgr0)\]'

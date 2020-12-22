@@ -24,8 +24,9 @@ else
 fi
 
 ## Install vim color scheme
-if [ -d "~/.vim/colors" ]
+if [ ! -d "~/.vim/colors" ]
 then
+    mkdir ~/.vim/
     mkdir ~/.vim/colors
     cp -r "$DOTFILES_DIR/colors" ~/.vim/colors
 else
@@ -35,7 +36,7 @@ echo
 
 ## Verify if Vundle is installed
 echo -n Verifying if Vundle is installed... 
-if [ -d "~/.vim/bundle/" ]
+if [ ! -d "~/.vim/bundle/" ]
 then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 else
@@ -54,7 +55,7 @@ echo
 
 ##Verify if tpm is installed
 echo -n Verifying if tpm is installed... 
-if [ -d "~/.tmux/plugins/tpm" ]
+if [ ! -d "~/.tmux/plugins/tpm" ]
 then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 else
